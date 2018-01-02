@@ -1,0 +1,90 @@
+<nav class="navbar navbar-default navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/']" style="color: white;">Bruce's App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/dashboard']">Dashboard
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/edit']">Profile
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/pokes']">Let's Poke <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/events']">Check Events
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" (submit)="logout()">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Log out</button>
+    </form>
+  </div>
+</div>
+</nav>
+
+<div class="back">
+  <div class="container">
+    <div class="list">
+      <div class="list-group1">
+        <p class="list-group-item list-group-item-action active">
+          Host: {{event._event_poster.first_name}} {{event._event_poster.last_name}}
+        </p>
+        <p class="list-group-item list-group-item-action">Date: {{event.date | date: "longDate"}}
+        </p>
+        <p class="list-group-item list-group-item-action">Location: {{event.location}}
+        </p>
+        <p class="list-group-item list-group-item-action">People who are joining this event: {{event._users_joined.length}}
+        </p>
+      </div>
+    </div>
+
+    <div class="tab">
+      <table class="table table-hover">
+        <thead>
+          <tr class="table-primary">
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let e of event._users_joined" class="r">
+            <th scope="row">{{e.first_name}} {{e.last_name}}</th>
+            <td>{{e.email}}</td>
+            <td>{{e.location}}</td>
+          </tr>
+        </tbody>
+      </table> 
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

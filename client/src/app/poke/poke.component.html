@@ -1,0 +1,86 @@
+<nav class="navbar navbar-default navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/']" style="color: white;">Bruce's App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/dashboard']">Dashboard
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/edit']">Profile
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/events']">Check Events
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" (submit)="logout()">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Log out</button>
+    </form>
+  </div>
+</div>
+</nav>
+
+<div class="back">
+  <div class="container">
+    <p class="list-group-item list-group-item-action active width">
+      Welcome, {{user.first_name}} {{user.last_name}}!--- <strong><span class="badge badge-primary1 badge-pill">{{my_poke.length}}</span> people poked you!</strong>
+    </p>
+    <ul class="list-group1" *ngFor = "let m of my_poke">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Number of {{m._from_user.first_name}} {{m._from_user.last_name}} poked you: 
+        <span class="badge badge-primary badge-pill">{{m.num_of_pokes}}</span>
+      </li>
+      
+    </ul>
+    <hr>
+
+    <div class="show">
+      <h3 style="color: white;">People you may want to poke:</h3>
+      <table class="table table-hover">
+        <thead>
+          <tr class="trow">
+            <th scope="col">Name</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">Poke History</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-warning" *ngFor = "let a of allusers">
+            <th scope="row">{{a.first_name}} {{a.last_name}}</th>
+            <td>{{a.email}}</td>
+            <td>{{a.poked_total}}</td>
+            <td><button class="btn btn-danger" (click) = "poke(a._id)">Poke!</button></td>
+          </tr>
+
+        </tbody>
+      </table> 
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

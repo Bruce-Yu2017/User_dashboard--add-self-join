@@ -1,0 +1,17 @@
+.back {
+  background-image: url("/./../assets/img/eventdashboard.jpeg");
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment:fixed;
+  height: 1000px;
+  opacity: 0.9;
+  padding-top: 100px;
+}
+
+.showtable {
+  height: 800px;
+  overflow: scroll;
+}

@@ -1,0 +1,55 @@
+.back {
+  background-image: url("/./../assets/img/eventdetail.jpg");
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment:fixed;
+  height: 900px;
+  /*opacity: 0.9;*/
+  padding-top: 150px;
+}
+
+.list-group1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  /*position: fixed;*/
+  width: 30rem;
+}
+
+.list {
+  display: blcok;
+}
+
+.tab {
+  margin-top: 70px;
+  width: 60%;
+}
+
+.r {
+  background-color: green;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
